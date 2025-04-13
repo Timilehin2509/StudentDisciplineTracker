@@ -1,8 +1,8 @@
 <?php
 // Database connection details
 $servername = "localhost";
-$username = "root";
-$password = "password";
+$username = "root";  // XAMPP default
+$password = "";      // XAMPP default (empty password)
 $dbname = "disciplinary_system";
 
 // Create connection

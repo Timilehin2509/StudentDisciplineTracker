@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $uploadedFiles = [];
         
         if (!empty($_FILES['supporting_documents']['name'][0])) {
-            $uploadDir = '../uploads/';
+            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/StudentDisciplineTracker/uploads/';
             
             // Create uploads directory if it doesn't exist
             if (!file_exists($uploadDir)) {

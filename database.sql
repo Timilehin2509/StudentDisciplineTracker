@@ -14,6 +14,12 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- Default Users
+INSERT INTO users (username, password, role, name, email) 
+VALUES 
+('admin', 'admin123', 'admin', 'Administrator', 'admin@example.com'),
+('staff01', 'password123', 'staff', 'Sample Staff', 'staff@example.com');
+
 -- Students Table
 CREATE TABLE IF NOT EXISTS students (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,10 +32,19 @@ CREATE TABLE IF NOT EXISTS students (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- Default Students
+INSERT INTO students (student_number, password, name, email, class) 
+VALUES 
+('BU123456', 'password123', 'John Doe', 'john@example.com', 'Class A'),
+('BU789012', 'password123', 'Jane Smith', 'jane@example.com', 'Class B'),
+('BU345678', 'password123', 'Bob Wilson', 'bob@example.com', 'Class C');
+
 -- Incidents Table
 CREATE TABLE IF NOT EXISTS incidents (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    type ENUM('Academic Dishonesty', 'Attendance Issues', 'Behavioral Problems', 'Dress Code Violation', 'Property Damage', 'Physical Altercation', 'Verbal Misconduct', 'Other') NOT NULL,
+    type ENUM('Academic Dishonesty', 'Attendance Issues', 'Behavioral Problems', 
+              'Dress Code Violation', 'Property Damage', 'Physical Altercation', 
+              'Verbal Misconduct', 'Other') NOT NULL,
     description TEXT NOT NULL,
     date_of_incidence DATE NOT NULL,
     date_reported DATE NOT NULL,
@@ -53,16 +68,3 @@ CREATE TABLE IF NOT EXISTS incident_students (
     FOREIGN KEY (incident_id) REFERENCES incidents(id) ON DELETE CASCADE,
     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE
 );
-
--- Update default admin account password to plaintext
-UPDATE users SET password = 'admin123' WHERE username = 'admin';
--- Default password is now "admin123" (plaintext) - change in production
-
--- Update sample staff password to plaintext
-UPDATE users SET password = 'password123' WHERE username = 'staff01';
--- Default password is now "password123" (plaintext)
-
--- Update sample student passwords to plaintext
-UPDATE students SET password = 'password123' 
-WHERE student_number IN ('BU123456', 'BU789012', 'BU345678');
--- Default password is now "password123" (plaintext)

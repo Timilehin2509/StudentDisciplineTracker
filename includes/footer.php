@@ -1,10 +1,10 @@
-    </main>
+</main>
     <footer class="text-light py-5 mt-5" style="background-color: var(--babcock-blue);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <div class="footer-brand mb-4">
-                        <img src="/img/babcock-logo.png" alt="Babcock University Logo" height="60" class="mb-3" onerror="this.onerror=null; this.src=''; this.style.display='none';">
+                        <img src="/StudentDisciplineTracker/img/babcock-logo.png" alt="Babcock University Logo" height="60" class="mb-3" onerror="this.onerror=null; this.src=''; this.style.display='none';">
                         <h5>Babcock University</h5>
                     </div>
                     <p class="mb-3">Student Disciplinary Record Management System</p>
@@ -15,8 +15,8 @@
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5 class="mb-4">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/" class="text-light"><i class="fas fa-home me-2"></i>Home</a></li>
-                        <li class="mb-2"><a href="/login.php" class="text-light"><i class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                        <li class="mb-2"><a href="/StudentDisciplineTracker/" class="text-light"><i class="fas fa-home me-2"></i>Home</a></li>
+                        <li class="mb-2"><a href="/StudentDisciplineTracker/login.php" class="text-light"><i class="fas fa-sign-in-alt me-2"></i>Login</a></li>
                         <?php if (isLoggedIn()): ?>
                             <?php if (isAdmin()): ?>
                                 <li class="mb-2"><a href="/admin/dashboard.php" class="text-light"><i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard</a></li>
@@ -65,20 +65,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Main JS -->
-    <script src="/js/main.js"></script>
+    <!-- Update JS paths -->
+    <script src="/StudentDisciplineTracker/js/main.js"></script>
     
     <?php if (isAdmin()): ?>
-    <!-- Admin JS -->
-    <script src="/js/admin.js"></script>
-    <!-- Charts JS -->
-    <script src="/js/charts.js"></script>
+    <script src="/StudentDisciplineTracker/js/admin.js"></script>
+    <script src="/StudentDisciplineTracker/js/charts.js"></script>
     <?php elseif (isStaff()): ?>
     <!-- Staff JS -->
-    <script src="/js/staff.js"></script>
+    <script src="/StudentDisciplineTracker/js/staff.js"></script>
     <?php elseif (isStudent()): ?>
     <!-- Student JS -->
-    <script src="/js/student.js"></script>
+    <script src="/StudentDisciplineTracker/js/student.js"></script>
     <?php endif; ?>
 </body>
 </html>

@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         return;
                     }
                     
-                    // Create request object for student search
+                    // Fix the API endpoint path
                     const request = new XMLHttpRequest();
-                    request.open('GET', `/api/students.php?search=${searchValue}`);
+                    request.open('GET', `/StudentDisciplineTracker/api/students.php?search=${encodeURIComponent(searchValue)}`);
                     
                     request.onload = function() {
                         if (this.status >= 200 && this.status < 400) {
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Create request object
                 const formData = new FormData(reportForm);
                 const request = new XMLHttpRequest();
-                request.open('POST', '/api/incidents.php');
+                request.open('POST', '/StudentDisciplineTracker/api/incidents.php');
                 
                 request.onload = function() {
                     if (this.status >= 200 && this.status < 400) {

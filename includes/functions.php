@@ -53,7 +53,7 @@ function isStudent() {
  */
 function requireLogin() {
     if (!isLoggedIn()) {
-        header("Location: /login.php");
+        header("Location: /StudentDisciplineTracker/login.php");
         exit;
     }
 }
@@ -63,13 +63,13 @@ function requireLogin() {
  */
 function redirectToDashboard() {
     if (isAdmin()) {
-        header("Location: /admin/dashboard.php");
+        header("Location: /StudentDisciplineTracker/admin/dashboard.php");
     } elseif (isStaff()) {
-        header("Location: /staff/dashboard.php");
+        header("Location: /StudentDisciplineTracker/staff/dashboard.php");
     } elseif (isStudent()) {
-        header("Location: /student/dashboard.php");
+        header("Location: /StudentDisciplineTracker/student/dashboard.php");
     } else {
-        header("Location: /login.php");
+        header("Location: /StudentDisciplineTracker/login.php");
     }
     exit;
 }

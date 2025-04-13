@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
+require_once __DIR__ . '/functions.php';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -17,7 +17,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/StudentDisciplineTracker/css/style.css">
 </head>
 <body>
     <header>
@@ -34,11 +34,11 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <?php if (isLoggedIn()): ?>
                         <?php if (isAdmin()): ?>
-                            <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/admin_menu.php'; ?>
+                            <?php include __DIR__ . '/admin_menu.php'; ?>
                         <?php elseif (isStaff()): ?>
-                            <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/staff_menu.php'; ?>
+                            <?php include __DIR__ . '/staff_menu.php'; ?>
                         <?php elseif (isStudent()): ?>
-                            <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/student_menu.php'; ?>
+                            <?php include __DIR__ . '/student_menu.php'; ?>
                         <?php endif; ?>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item dropdown">
@@ -48,14 +48,14 @@ if (session_status() === PHP_SESSION_NONE) {
                                     <?php echo $_SESSION['name']; ?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="/logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                                    <li><a class="dropdown-item" href="/StudentDisciplineTracker/logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
                     <?php else: ?>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/login.php"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
+                                <a class="nav-link" href="/StudentDisciplineTracker/login.php"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
                             </li>
                         </ul>
                     <?php endif; ?>
