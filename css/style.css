@@ -1,0 +1,587 @@
+/* Main Styles for Babcock University Disciplinary System */
+
+:root {
+    --babcock-blue: #003366;
+    --babcock-gold: #FFD700;
+    --babcock-white: #FFFFFF;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #6c757d;
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-gray);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Header & Navigation */
+.navbar-dark.bg-primary {
+    background-color: var(--babcock-blue) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--babcock-white);
+}
+
+.navbar-brand i {
+    color: var(--babcock-gold);
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: var(--babcock-gold) !important;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: var(--babcock-blue);
+    color: var(--babcock-white);
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.card-metrics {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.card-metrics i {
+    font-size: 2.5rem;
+    color: var(--babcock-blue);
+    margin-bottom: 1rem;
+}
+
+.card-metrics .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--babcock-blue);
+}
+
+.card-metrics .metric-label {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+}
+
+/* Tables */
+.table th {
+    background-color: var(--babcock-blue);
+    color: var(--babcock-white);
+    font-weight: 500;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 51, 102, 0.05);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--babcock-blue);
+    border-color: var(--babcock-blue);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #002347;
+    border-color: #002347;
+}
+
+.btn-gold {
+    background-color: var(--babcock-gold);
+    border-color: var(--babcock-gold);
+    color: var(--babcock-blue);
+}
+
+.btn-gold:hover, .btn-gold:focus {
+    background-color: #e6c200;
+    border-color: #e6c200;
+    color: var(--babcock-blue);
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--babcock-blue);
+    box-shadow: 0 0 0 0.25rem rgba(0, 51, 102, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-logo i {
+    font-size: 4rem;
+    color: var(--babcock-blue);
+}
+
+.login-tabs .nav-link {
+    color: var(--dark-gray);
+}
+
+.login-tabs .nav-link.active {
+    color: var(--babcock-blue);
+    font-weight: 700;
+    border-bottom: 3px solid var(--babcock-gold);
+}
+
+/* Landing Page */
+.hero-section {
+    position: relative;
+    background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.8)), url('../img/university-campus.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--babcock-white);
+    padding: 8rem 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideInDown 1s ease-in-out;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 1s ease-in-out;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--babcock-blue);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
+
+.section-divider {
+    width: 100%;
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 51, 102, 0.2);
+    z-index: 1;
+}
+
+.section-divider span {
+    position: relative;
+    background: white;
+    padding: 0 15px;
+    z-index: 2;
+}
+
+.section-divider i {
+    color: var(--babcock-gold);
+    font-size: 1.5rem;
+}
+
+/* Features Section */
+.features-section {
+    padding: 5rem 0;
+    background-color: var(--babcock-white);
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 3.5rem;
+    color: var(--babcock-blue);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover i {
+    color: var(--babcock-gold);
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--babcock-blue);
+    font-weight: 600;
+}
+
+/* Dashboard */
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-title {
+    color: var(--babcock-blue);
+    font-weight: 700;
+}
+
+/* Status Badges */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.75em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--babcock-blue) !important;
+    color: var(--babcock-white);
+}
+
+footer h5 {
+    color: var(--babcock-gold);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--babcock-gold);
+}
+
+footer a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--babcock-gold) !important;
+    text-decoration: none;
+}
+
+footer .social-icons a {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--babcock-gold) !important;
+    transform: translateY(-3px);
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
+}
+
+.footer-brand img {
+    filter: brightness(0) invert(1);
+}
+
+/* Charts */
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* About Section */
+.about-section {
+    padding: 5rem 0;
+}
+
+.about-content {
+    padding: 1rem;
+}
+
+.about-content .lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--babcock-blue);
+    margin-bottom: 1.5rem;
+}
+
+.about-image-wrapper {
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: rgba(0, 51, 102, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-stats .stat-item {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-stats .stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-stats h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--babcock-blue);
+    margin-bottom: 0.5rem;
+}
+
+.about-stats p {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 0 1rem;
+    text-align: center;
+}
+
+.testimonial-content {
+    position: relative;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-content::before {
+    content: '\201C';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 4rem;
+    color: rgba(0, 51, 102, 0.1);
+    font-family: Georgia, serif;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-avatar {
+    font-size: 2.5rem;
+    color: var(--babcock-blue);
+    margin-right: 1rem;
+}
+
+.testimonial-info h5 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--babcock-blue);
+}
+
+.testimonial-info span {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 0;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .feature-card {
+        margin-bottom: 2rem;
+    }
+    
+    .about-stats {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-card {
+        margin-bottom: 2rem;
+    }
+    
+    .testimonial-card {
+        margin: 0;
+    }
+}
